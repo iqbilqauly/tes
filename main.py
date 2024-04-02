@@ -3,11 +3,6 @@ import matplotlib.pyplot as plt
 import psycopg2
 
 # Informasi koneksi ke database PostgreSQL di cloud Aiven
-hostname = 'pg-3e119ea2-andi176.a.aivencloud.com'
-port = 14814
-username = 'avnadmin'
-password = 'AVNS_8X2P-_6dzJylk3YECuH'
-database = 'defaultdb'
 
 # Membuat koneksi ke database PostgreSQL
 conn = psycopg2.connect(
@@ -19,7 +14,6 @@ conn = psycopg2.connect(
 )
 
 # Membaca data dari database menggunakan Pandas
-query = "SELECT sepallengthcm, sepalwidthcm FROM iris"
 cursor = conn.cursor()
 cursor.execute(query)
 rows = cursor.fetchall()
